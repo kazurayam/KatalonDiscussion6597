@@ -20,7 +20,8 @@ import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
 
 import static java.util.Comparator.*;
-def source = new ArrayList<String>() ['3','2','1','4']
-def expected = new ArrayList<String>() ['4','3','2','0']
+def source = ['3','2','1','4']
+def expected = ['4','3','2','1']
+assert source != expected
 def actual = source.stream().sorted(reverseOrder())
-assert source == expected
+assert actual == expected
