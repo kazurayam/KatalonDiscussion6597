@@ -18,10 +18,27 @@ import com.kms.katalon.core.webservice.keyword.WSBuiltInKeywords as WS
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUiBuiltInKeywords
 import com.kms.katalon.core.webui.keyword.WebUiBuiltInKeywords as WebUI
 import internal.GlobalVariable as GlobalVariable
+import org.openqa.selenium.Keys as Keys
 
-import static java.util.Comparator.*;
-def source = ['3','2','1','4']
-def expected = ['4','3','2','1']
+import static java.util.Comparator.*
+
+def source = ['3', '2', '1', '4']
+
+def expected = ['4', '3', '2', '1']
+
 assert source != expected
+
 def actual = source.stream().sorted(reverseOrder())
+
 assert actual == expected
+
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('https://www.w3schools.com/html/html_tables.asp')
+
+WebUI.click(findTestObject('null'))
+
+WebUI.click(findTestObject('null'))
+
+WebUI.closeBrowser()
+
