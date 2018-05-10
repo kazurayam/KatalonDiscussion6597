@@ -79,19 +79,17 @@ WebDriver driver = DriverFactory.getWebDriver()
 WebElement table = driver.findElement(By.xpath('//table[@id="customers"]'))
 WebUI.comment("${table.getAttribute('outerHTML')}")
 
-WebUI.comment(">>> original")
 'To select a set of <td> element of each rows'
-List<WebElement> tds = table.findElements(By.xpath('./tbody/tr/td[1]'))
-tds.each {
-	WebUI.comment("${it.getAttribute('outerHTML')}")
+List<WebElement> original = table.findElements(By.xpath('./tbody/tr/td[1]'))
+original.each {
+	WebUI.comment("original: ${it.getAttribute('outerHTML')}")
 }
 
-WebUI.comment(">>> reversed copy")
-List<WebElement> reverseTds = tds.sort({left, right -> right.getText() <=> left.getText()})
-reverseTds.each {
-	WebUI.comment("${it.getAttribute('outerHTML')}")
-}
+'verify if the original is NATURAL ordered --> should PASS'
+CustomKeywords.'mypackage.WebElementListVerifier.verifySortedNatural'(original)
 
+'verify if the original is REVERSE ordered --> should FAIL'
+CustomKeywords.'mypackage.WebElementListVerifier.verifySortedReverse'(original)
 
 WebUI.closeBrowser()
 
