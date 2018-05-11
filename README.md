@@ -5,7 +5,8 @@ This is a small [Katalon Studio](https://www.katalon.com/) project for demonstra
 You can clone this out on your PC and execute it with your Katalon Studio.
 
 This project is developed to propose a solution for the following discussion:
-https://forum.katalon.com/discussion/6597/is-there-anyway-to-test-sorting-functionality-of-a-web-table
+
+- https://forum.katalon.com/discussion/6597/is-there-anyway-to-test-sorting-functionality-of-a-web-table
 
 # Problem to solve
 
