@@ -46,8 +46,8 @@ class WebElementListVerifier {
 
 	@Keyword
 	def boolean verifySortedNatural(List<WebElement> list) {
-		List<WebElement> natural = 
-			list.sort(false, {left, right -> left.getText() <=> right.getText()})
+		List<WebElement> natural =
+				list.sort(false, {left, right -> left.getText() <=> right.getText()})
 		//natural.each {
 		//	WebUI.comment("natural: ${it.getAttribute('outerHTML')}")
 		//}
@@ -72,8 +72,8 @@ class WebElementListVerifier {
 
 	@Keyword
 	def boolean verifySortedReverse(List<WebElement> list) {
-		List<WebElement> reverse = 
-			list.sort(false, {left, right -> right.getText() <=> left.getText()})
+		List<WebElement> reverse =
+				list.sort(false, {left, right -> right.getText() <=> left.getText()})
 		//list.each {
 		//	WebUI.comment("list: ${it.getAttribute('outerHTML')}")
 		//}
